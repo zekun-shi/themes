@@ -606,7 +606,7 @@ determine the exact padding."
   ;; :extend t because only extending faces paint past the end of a line, so
   ;; without it a line ending in math showed org-block's orange to the edge.
   ((org-src-block-faces
-    `(quote (("latex" (:background ,(doom-color 'bg) :extend t)))))))
+    `(quote (("latex" (:background ,(doom-color 'bg) :extend t))))))
   )
 
 ;;; doom-flatwhite-theme.el ends here
