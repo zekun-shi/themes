@@ -598,7 +598,13 @@ determine the exact padding."
    ((whitespace-indentation &override) :background (if (default-value 'indent-tabs-mode) base0 'unspecified)))
 
   ;;;; Base theme variable overrides-
-  ()
+  ;; Org fontifies LaTeX ($...$, \(...\), environments) natively as a src block
+  ;; of language "latex" and then appends `org-block', which is orange here.  A
+  ;; face for "latex" comes earlier in that face list, so a plain background
+  ;; keeps inline math off the orange, and with it the preview images, which
+  ;; take their background from the text around them.  Code blocks keep theirs.
+  ((org-src-block-faces
+    `(quote (("latex" (:background ,(doom-color 'bg)))))))
   )
 
 ;;; doom-flatwhite-theme.el ends here
