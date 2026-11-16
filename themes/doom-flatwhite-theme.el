@@ -603,8 +603,10 @@ determine the exact padding."
   ;; face for "latex" comes earlier in that face list, so a plain background
   ;; keeps inline math off the orange, and with it the preview images, which
   ;; take their background from the text around them.  Code blocks keep theirs.
+  ;; :extend t because only extending faces paint past the end of a line, so
+  ;; without it a line ending in math showed org-block's orange to the edge.
   ((org-src-block-faces
-    `(quote (("latex" (:background ,(doom-color 'bg)))))))
+    `(quote (("latex" (:background ,(doom-color 'bg) :extend t)))))))
   )
 
 ;;; doom-flatwhite-theme.el ends here
