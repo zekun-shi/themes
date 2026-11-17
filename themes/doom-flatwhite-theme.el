@@ -513,6 +513,10 @@ determine the exact padding."
    (markdown-html-entity-face        :inherit 'font-lock-variable-name-face)
    (markdown-html-tag-delimiter-face :inherit 'markdown-markup-face)
    (markdown-html-tag-name-face      :inherit 'font-lock-keyword-face)
+   ;;;; cursor, current line, region: visible on the cream background
+   (cursor  :background (doom-darken fw-blue 0.25))
+   (hl-line :background fw-blue-blend)
+   (region  :background (doom-darken fw-blue-blend 0.12) :extend t)
    ;;;; org-mode
    ((outline-1 &override) :foreground red)
    ((outline-2 &override) :foreground orange)
